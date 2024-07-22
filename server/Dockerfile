@@ -36,6 +36,9 @@ COPY --chown=www-data:www-data . /var/www/html
 # Change current user to www
 USER www-data
 
+# Install dependencies
+RUN composer install
+
 # Add entrypoint script and make it executable
 COPY entrypoint.sh /entrypoint.sh
 
