@@ -16,14 +16,13 @@ export default {
         async loginUser() {
             // Reset errors
             this.errors = [];
-            try {
                 // Get Email & Password from form & create body object
                 const email = this.inputtedEmail;
                 const password = this.inputtedPassword;
                 const body = {email, password};
 
                 // Send POST request to API attaching body
-                const response = await fetch(import.meta.env.VITE_API_URL + "/api/login", {
+                const response = fetch(import.meta.env.VITE_API_URL + "/api/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -40,21 +39,13 @@ export default {
                         this.errors.push(response.message);
                     }
                 })
-                .catch((err) => {
+                .catch((err, data) => {
                     //this.errors.push(err.data.message);
-                    console.log(err);
+                    console.log('Data', data);
+                    console.log('Error', err);
                     console.log('fetch catch');
                     console.error(err.message);
                 });
-
-                // Await response
-                const parseRes = await response.json();
-            } catch (err) {
-                //this.errors.push(err.data.message);
-                console.log(err);
-                console.log('try catch');
-                console.error(err.message);
-            }
         }
     }
 }
