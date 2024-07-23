@@ -9,13 +9,12 @@ export default {
             inputtedEmail: ref(''),
             inputtedPassword: ref(''),
             username: null,
-            errors: [],
         }
     },
     methods: {
         async loginUser() {
             // Reset errors
-            this.errors = [];
+            document.getElementById('error').innerHTML = parseRes.message;
             try {
                 // Get Email & Password from form & create body object
                 const email = this.inputtedEmail;
@@ -40,13 +39,11 @@ export default {
                     localStorage.setItem("token", parseRes.token);
                     this.$router.push({ path: 'dashboard' });
                 } else {
-                    console.log(parseRes.message);
-                    console.error('Error response:', parseRes);
                     if (parseRes.message) {
-                        this.errors.push(parseRes.message);
+                        // Set error
                         document.getElementById('error').innerHTML = parseRes.message;
                     } else {
-                        this.errors.push('An unexpected error occurred.');
+                        document.getElementById('error').innerHTML = 'An unexpected error occurred.';
                     }
                 }
             } catch (err) {
@@ -75,7 +72,7 @@ export default {
                 <a href="/register">Or create an account</a>
                 <button type="submit">Login</button>
             </div>
-            <p id="error" :v-for="error in errors">{{error}}</p>
+            <p id="error"></p>
         </form>
     </div>
   </div>
