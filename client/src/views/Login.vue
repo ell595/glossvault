@@ -34,6 +34,7 @@ export default {
                     if (res.status === 200) {
                         // Store API token in localStorage & redirect to Dashboard
                         const parseRes = res.json();
+                        console.log(parseRes);
                         localStorage.setItem("token", parseRes.token);
                         this.$router.push({ path: 'dashboard' });
                     } else {
