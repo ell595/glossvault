@@ -65,7 +65,7 @@ class AuthController extends Controller
 
     public function logInUser(Request $request)
     {
-        Log::info('route hit');
+        Log::info($request);
         try {
             // Validate data submitted via request
             $this->validate($request, [

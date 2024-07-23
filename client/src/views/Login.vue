@@ -18,6 +18,7 @@ export default {
                 const email = this.inputtedEmail;
                 const password = this.inputtedPassword;
                 const body = {email, password};
+                console.log(body);
 
                 // Send POST request to API attaching body
                 const response = await fetch(import.meta.env.VITE_API_URL + "/api/login", {
