@@ -35,17 +35,20 @@ export default {
                 // Await response
                 const parseRes = await response.json();
 
-                if (response.status === 200) {
+                if (response.ok) {
                     // Store API token in localStorage & redirect to Dashboard
                     localStorage.setItem("token", parseRes.token);
                     this.$router.push({ path: 'dashboard' });
                 } else {
-                    this.errors.push(response.message);
+                    if (parseRes.message) {
+                        this.errors.push(response.message);
+                    } else {
+                        this.errors.push('An unexpected error occurred.');
+                    }
                 }
             } catch (err) {
-                //this.errors.push(err.response);
-                console.log(err.response);
-                console.error(err.message)
+                console.error('Network error:', err);
+                this.errors.push('A network error occured. Please try again.');
             }
         }
     }
