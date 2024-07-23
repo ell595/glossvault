@@ -1,6 +1,6 @@
 {
-  "_styles-I10pNDab.js": {
-    "file": "assets/styles-I10pNDab.js",
+  "_styles-hUAtR0rQ.js": {
+    "file": "assets/styles-hUAtR0rQ.js",
     "name": "styles",
     "dynamicImports": [
       "src/views/Home.vue",
@@ -12,68 +12,68 @@
     ]
   },
   "index.html": {
-    "file": "assets/index-B2CWxX0G.js",
+    "file": "assets/index-CC2iWK-2.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
     "imports": [
-      "_styles-I10pNDab.js"
+      "_styles-hUAtR0rQ.js"
     ]
   },
   "src/main.js": {
-    "file": "assets/main-Dn9ZRHF2.js",
+    "file": "assets/main-Bv1_OnJz.js",
     "name": "main",
     "src": "src/main.js",
     "isEntry": true,
     "imports": [
-      "_styles-I10pNDab.js"
+      "_styles-hUAtR0rQ.js"
     ]
   },
   "src/views/CollectionPage.vue": {
-    "file": "assets/CollectionPage-CaqsVqPZ.js",
+    "file": "assets/CollectionPage-BqmpF7zq.js",
     "name": "CollectionPage",
     "src": "src/views/CollectionPage.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_styles-I10pNDab.js"
+      "_styles-hUAtR0rQ.js"
     ]
   },
   "src/views/Dashboard.vue": {
-    "file": "assets/Dashboard-WgWBStPH.js",
+    "file": "assets/Dashboard-BVs2iPdl.js",
     "name": "Dashboard",
     "src": "src/views/Dashboard.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_styles-I10pNDab.js"
+      "_styles-hUAtR0rQ.js"
     ]
   },
   "src/views/Home.vue": {
-    "file": "assets/Home-DpVL7nYj.js",
+    "file": "assets/Home-CZc1lRqt.js",
     "name": "Home",
     "src": "src/views/Home.vue",
     "isDynamicEntry": true,
     "imports": [
       "src/views/Register.vue",
       "src/views/Login.vue",
-      "_styles-I10pNDab.js"
+      "_styles-hUAtR0rQ.js"
     ]
   },
   "src/views/Login.vue": {
-    "file": "assets/Login-BJovgPv5.js",
+    "file": "assets/Login-DWq0dEgt.js",
     "name": "Login",
     "src": "src/views/Login.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_styles-I10pNDab.js"
+      "_styles-hUAtR0rQ.js"
     ]
   },
   "src/views/Register.vue": {
-    "file": "assets/Register-Dd-FRs6b.js",
+    "file": "assets/Register-JgTqIywV.js",
     "name": "Register",
     "src": "src/views/Register.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_styles-I10pNDab.js"
+      "_styles-hUAtR0rQ.js"
     ]
   },
   "style.css": {

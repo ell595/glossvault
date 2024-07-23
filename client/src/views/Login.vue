@@ -39,10 +39,9 @@ export default {
                         this.errors.push(response.message);
                     }
                 })
-                .catch((err, data) => {
+                .catch((err) => {
                     //this.errors.push(err.data.message);
-                    console.log('Data', data);
-                    console.log('Error', err);
+                    console.log('Error', err.response.json());
                     console.log('fetch catch');
                     console.error(err.message);
                 });
