@@ -27,9 +27,6 @@ RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy existing application directory contents
-COPY . /var/www/html
-
 # Copy existing application directory permissions
 COPY --chown=www-data:www-data . /var/www/html
 
@@ -37,7 +34,7 @@ COPY --chown=www-data:www-data . /var/www/html
 USER www-data
 
 # Install dependencies
-RUN composer install
+# RUN composer install
 
 # Add entrypoint script and make it executable
 COPY entrypoint.sh /entrypoint.sh

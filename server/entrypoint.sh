@@ -13,6 +13,9 @@ done
 
 echo "MySQL is ready! Proceeding with migrations..."
 
+# Install dependencies
+composer install
+
 # Run migrations
 php artisan migrate:fresh --seed
 
