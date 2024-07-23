@@ -8,11 +8,14 @@ export default {
         return {
             inputtedEmail: ref(''),
             inputtedPassword: ref(''),
-            username: null
+            username: null,
+            errors: [],
         }
     },
     methods: {
         async loginUser() {
+            // Reset errors
+            errors = [];
             try {
                 // Get Email & Password from form & create body object
                 const email = this.inputtedEmail;
@@ -36,6 +39,8 @@ export default {
                     // Store API token in localStorage & redirect to Dashboard
                     localStorage.setItem("token", parseRes.token);
                     this.$router.push({ path: 'dashboard' });
+                } else {
+                    this.errors.push(response.message);
                 }
             } catch (err) {
                 console.error(err.message)
@@ -62,6 +67,7 @@ export default {
                 <a href="/register">Or create an account</a>
                 <button type="submit">Login</button>
             </div>
+            <p id="error" :v-for="error in errors">{error}</p>
         </form>
     </div>
   </div>

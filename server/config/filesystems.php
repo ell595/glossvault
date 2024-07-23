@@ -51,8 +51,7 @@ return [
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
-            'http' => ['verify' => false], // TODO - DO NOT USE IN LIVE ENVIRONMENT!!!!!!!!!!!!!!!!!!
-            'throw' => false,
+            'http' => ['verify' => true],
         ],
 
     ],

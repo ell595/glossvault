@@ -22,7 +22,8 @@ export default {
             isPasswordConfirmed: computed(() => {
                 return this.startValidation ? this.inputtedPassword === this.confirmPassword : false;
             }),
-            userID: null
+            userID: null,
+            errors: [],
         };
     },
     methods: {
@@ -31,6 +32,9 @@ export default {
             event.target.reportValidity();
         },
         async registerUser() {
+            // Reset errors
+            errors = [];
+
             this.startValidation = true;
 
             // Validate inputs
@@ -83,6 +87,8 @@ export default {
                         // Store API token in localStorage & redirect to dashboard
                         localStorage.setItem("token", parseRes.token);
                         this.$router.push({ path: 'dashboard' })
+                    } else {
+                        this.errors.push(response.message);
                     }
                 } catch ( err) {
                     console.error(err.message)
@@ -113,6 +119,7 @@ export default {
             <a href="/login">Or log in to your account</a>
             <Button @click="registerUser()">Register</Button>
           </div>
+          <p id="error" :v-for="error in errors">{error}</p>
       </form>
     </div>
   </div>
