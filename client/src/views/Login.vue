@@ -30,22 +30,30 @@ export default {
                         "Accept": "application/json"
                     },
                     body: JSON.stringify(body)
+                })
+                .then((res) => {
+                    if (response.status === 200) {
+                        // Store API token in localStorage & redirect to Dashboard
+                        localStorage.setItem("token", parseRes.token);
+                        this.$router.push({ path: 'dashboard' });
+                    } else {
+                        this.errors.push(response.message);
+                    }
+                })
+                .catch((err) => {
+                    this.errors.push(err.data.message);
+                    console.log(err);
+                    console.log('fetch catch');
+                    console.error(err.message);
                 });
 
                 // Await response
                 const parseRes = await response.json();
-
-                if (response.status === 200) {
-                    // Store API token in localStorage & redirect to Dashboard
-                    localStorage.setItem("token", parseRes.token);
-                    this.$router.push({ path: 'dashboard' });
-                } else {
-                    this.errors.push(response.message);
-                }
             } catch (err) {
                 this.errors.push(err.data.message);
                 console.log(err);
-                console.error(err.message)
+                console.log('try catch');
+                console.error(err.message);
             }
         }
     }
