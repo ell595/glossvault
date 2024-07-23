@@ -41,7 +41,7 @@ export default {
                     }
                 })
                 .catch((err) => {
-                    this.errors.push(err.data.message);
+                    //this.errors.push(err.data.message);
                     console.log(err);
                     console.log('fetch catch');
                     console.error(err.message);
@@ -50,7 +50,7 @@ export default {
                 // Await response
                 const parseRes = await response.json();
             } catch (err) {
-                this.errors.push(err.data.message);
+                //this.errors.push(err.data.message);
                 console.log(err);
                 console.log('try catch');
                 console.error(err.message);
