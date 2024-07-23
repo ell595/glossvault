@@ -119,7 +119,7 @@ export default {
             <a href="/login">Or log in to your account</a>
             <Button @click="registerUser()">Register</Button>
           </div>
-          <p id="error" :v-for="error in errors">{error}</p>
+          <p id="error" :v-for="error in errors">{{error}}</p>
       </form>
     </div>
   </div>

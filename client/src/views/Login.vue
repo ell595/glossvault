@@ -67,7 +67,7 @@ export default {
                 <a href="/register">Or create an account</a>
                 <button type="submit">Login</button>
             </div>
-            <p id="error" :v-for="error in errors">{error}</p>
+            <p id="error" :v-for="error in errors">{{error}}</p>
         </form>
     </div>
   </div>
