@@ -40,6 +40,7 @@ export default {
                     localStorage.setItem("token", parseRes.token);
                     this.$router.push({ path: 'dashboard' });
                 } else {
+                    console.error('Error response:', parseRes);
                     if (parseRes.message) {
                         this.errors.push(response.message);
                     } else {
