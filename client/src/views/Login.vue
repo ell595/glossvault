@@ -22,7 +22,7 @@ export default {
                 const body = {email, password};
 
                 // Send POST request to API attaching body
-                const response = fetch(import.meta.env.VITE_API_URL + "/api/login", {
+                const response = await fetch(import.meta.env.VITE_API_URL + "/api/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
