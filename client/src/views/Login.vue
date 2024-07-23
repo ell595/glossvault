@@ -41,8 +41,9 @@ export default {
                     this.$router.push({ path: 'dashboard' });
                 } else {
                     console.error('Error response:', parseRes);
+                    console.log(parseRes.message);
                     if (parseRes.message) {
-                        this.errors.push(response.message);
+                        this.errors.push(parseRes.message);
                     } else {
                         this.errors.push('An unexpected error occurred.');
                     }
