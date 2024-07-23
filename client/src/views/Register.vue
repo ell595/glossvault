@@ -71,7 +71,7 @@ export default {
 
                     // Send POST request to API attaching body
                     const response = await fetch(import.meta.env.VITE_API_URL + "/api/register", {
-                    method: "POST",
+                        method: "POST",
                         headers: {"Content-Type": "application/json"},
                         body: JSON.stringify(body)
                     });

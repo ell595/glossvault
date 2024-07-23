@@ -23,13 +23,15 @@ export default {
                 // Send POST request to API attaching body
                 const response = await fetch(import.meta.env.VITE_API_URL + "/api/login", {
                     method: "POST",
-                    headers: {"Content-Type": "application/json"},
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
                     body: JSON.stringify(body)
                 });
 
                 // Await response
                 const parseRes = await response.json();
-
 
                 if (response.status === 200) {
                     // Store API token in localStorage & redirect to Dashboard
