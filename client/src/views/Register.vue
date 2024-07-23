@@ -33,7 +33,7 @@ export default {
         },
         async registerUser() {
             // Reset errors
-            errors = [];
+            this.errors = [];
 
             this.startValidation = true;
 

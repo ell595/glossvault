@@ -15,7 +15,7 @@ export default {
     methods: {
         async loginUser() {
             // Reset errors
-            errors = [];
+            this.errors = [];
             try {
                 // Get Email & Password from form & create body object
                 const email = this.inputtedEmail;
