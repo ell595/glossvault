@@ -12,8 +12,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Auth Routes
-Route::post('register', [AuthController::class, 'registerUser']);
-Route::post('login', [AuthController::class, 'logInUser']);
+Route::middleware('api')->post('register', [AuthController::class, 'registerUser']);
+Route::middleware('api')->post('login', [AuthController::class, 'logInUser']);
 Route::post('logout', [AuthController::class, 'logOutUser']);
 
 // Protected Routes
