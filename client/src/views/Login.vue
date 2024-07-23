@@ -40,10 +40,11 @@ export default {
                     localStorage.setItem("token", parseRes.token);
                     this.$router.push({ path: 'dashboard' });
                 } else {
-                    console.error('Error response:', parseRes);
                     console.log(parseRes.message);
+                    console.error('Error response:', parseRes);
                     if (parseRes.message) {
                         this.errors.push(parseRes.message);
+                        document.getElementById('error').innerHTML = parseRes.message;
                     } else {
                         this.errors.push('An unexpected error occurred.');
                     }
