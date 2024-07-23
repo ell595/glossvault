@@ -15,10 +15,10 @@ class GlossController extends Controller
     {
         try {
             // Get all of a collections' polishes by accessing pivot table via the Collection ID
-            $polishes = Collection::whereId($request->collectionId)->first()->getPolishes();
+            $glosses = Collection::whereId($request->collectionId)->first()->getPolishes();
 
             return response()->json([
-                $polishes,
+                $glosses,
                 'status' => true
             ], 200);
         } catch (\Throwable $th) {
@@ -45,15 +45,13 @@ class GlossController extends Controller
                 $filePath = 'users/' . $user_id . '/' . 'glosses/' . $fileName;
                 // Save the image to S3 
                 Storage::disk('s3')->put($filePath, file_get_contents($image), 'public');
-                // Get the path to save in the database
-                $path = Storage::path($filePath);
 
-                            // Create polish & add it to pivot table
+            // Create polish & add it to pivot table
             $gloss = Gloss::create([
                 'name' => $request->name,
                 'colour' => $request->colour,
                 'brand' => $request->brand,
-                'image_path' => $path
+                'image_path' => $filePath
             ]);
             $gloss->addReferences($request);
             } else {
