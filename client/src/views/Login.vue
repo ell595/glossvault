@@ -31,17 +31,18 @@ export default {
                     body: JSON.stringify(body)
                 })
                 .then((res) => {
-                    if (response.status === 200) {
+                    if (res.status === 200) {
                         // Store API token in localStorage & redirect to Dashboard
+                        const parseRes = res.json();
                         localStorage.setItem("token", parseRes.token);
                         this.$router.push({ path: 'dashboard' });
                     } else {
-                        this.errors.push(response.message);
+                        this.errors.push(res.message);
                     }
                 })
                 .catch((err) => {
                     //this.errors.push(err.data.message);
-                    console.log('Error', err.response.json());
+                    console.log('Error', err.response);
                     console.log('fetch catch');
                     console.error(err.message);
                 });
