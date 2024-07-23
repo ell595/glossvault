@@ -43,6 +43,8 @@ export default {
                     this.errors.push(response.message);
                 }
             } catch (err) {
+                this.errors.push(err.data.message);
+                console.log(err);
                 console.error(err.message)
             }
         }
