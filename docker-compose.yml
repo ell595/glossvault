@@ -71,7 +71,7 @@ services:
       - ./:/var/www/html
     depends_on:
       - nginx
-    command: certonly --webroot --webroot-path=/var/www/html --email e.fraser3@gmail.com --agree-tos --no-eff-email --staging -d glossvault.ell595.site api-glosvault.ell595.site --dry-run
+    command: certonly --webroot --webroot-path=/var/www/html --email e.fraser3@gmail.com --agree-tos --no-eff-email --staging -d glossvault.ell595.site -d api-glosvault.ell595.site --dry-run
 
 networks:
   app-network:
