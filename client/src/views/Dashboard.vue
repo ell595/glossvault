@@ -128,8 +128,7 @@ export default {
   width: 100%;
   height: 20px;
   background: 
-    linear-gradient(90deg,#0001 33%,#0005 50%,#0001 66%)
-    #f2f2f2;
+    linear-gradient(90deg, rgba(248,58,96,0.14609593837535018) 33%, rgba(248,58,97,1) 50%, rgba(248,58,102,0.14889705882352944) 66%);
   background-size:300% 100%;
   animation: l1 1s infinite linear;
 }
