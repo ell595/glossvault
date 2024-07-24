@@ -56,6 +56,7 @@ services:
       - ./server:/var/www/html:delegated
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
+      - ./certbot:/var/www/certbot
     depends_on:
       - frontend
       - backend
@@ -68,11 +69,10 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
-      - ./:/var/www/html
       - ./certbot:/var/www/certbot
     depends_on:
       - nginx
-    command: certonly --webroot --webroot-path=/var/www/html --email e.fraser3@gmail.com --agree-tos --no-eff-email --staging -d glossvault.ell595.site -d api-glossvault.ell595.site --dry-run
+    command: certonly --webroot --webroot-path=/var/www/certbot --email e.fraser3@gmail.com --agree-tos --no-eff-email --staging -d glossvault.ell595.site -d api-glossvault.ell595.site --dry-run
 
 networks:
   app-network:
