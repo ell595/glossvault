@@ -14,7 +14,7 @@ export default {
     methods: {
         async loginUser() {
             // Reset errors
-            document.getElementById('error').innerHTML = parseRes.message;
+            document.getElementById('error').innerHTML = "";
             try {
                 // Get Email & Password from form & create body object
                 const email = this.inputtedEmail;
