@@ -30,6 +30,9 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy existing application directory permissions
 COPY --chown=www-data:www-data . /var/www/html
 
+# Copy custom php.ini
+COPY php.ini /usr/local/etc/php/conf.d/
+
 # Change current user to www
 USER www-data
 
