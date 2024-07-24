@@ -60,6 +60,17 @@ services:
     networks:
       - app-network
 
+    certbot:
+      image: certbot/certbot
+      container_name: certbot
+      volumes:
+        - certbot-etc:/etc/letsencrypt
+        - certbot-var:/var/lib/letsencrypt
+        - ./:/var/www/html
+      depends_on:
+        - webserver
+      command: certonly --webroot --webroot-path=/var/www/html --email e.fraser3@gmail.com --agree-tos --no-eff-email --staging -d glossvault.ell595.site api-glosvault.ell595.site --dry-run
+
 networks:
   app-network:
     driver: bridge
