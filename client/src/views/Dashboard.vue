@@ -121,7 +121,7 @@ export default {
 </script>
 
 <style scoped>
-.loader {
+.loading {
     position: absolute;
     top: 70px;
     z-index: 99;
@@ -259,9 +259,9 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-left: 1%;
-    gap: 30px 25%;
+    gap: 30px 5%;
 }
 
 #collectionCard {
