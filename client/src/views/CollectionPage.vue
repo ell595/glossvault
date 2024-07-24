@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isLoading" class="loading">Loading</div>
+    <div v-if="isLoading" class="loading"></div>
     <div id="grid">
         <div id="header">
             <h4>Collection Name:</h4>
@@ -114,36 +114,20 @@ export default {
 
 <style>
 .loading {
-    font-size: 20px;
-    padding: 10px;
-    position: fixed;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 70px;
     z-index: 99;
-    color: #891071;
+  width: 100%;
+  height: 20px;
+  background: 
+    linear-gradient(90deg,#f83a660b 33%,#f83a66 50%,#f83a660c 66%)
+    #fef0e6;
+    ;
+  background-size:300% 100%;
+  animation: l1 1s infinite linear;
 }
-
-.loading:after {
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: bottom;
-  -webkit-animation: ellipsis steps(4,end) 900ms infinite;      
-  animation: ellipsis steps(4,end) 900ms infinite;
-  content: "\2026"; /* ascii code for the ellipsis character */
-  width: 0px;
-}
-
-@keyframes ellipsis {
-  to {
-    width: 1.25em;    
-  }
-}
-
-@-webkit-keyframes ellipsis {
-  to {
-    width: 1.25em;    
-  }
+@keyframes l1 {
+  0% {background-position: right}
 }
 
 #grid {

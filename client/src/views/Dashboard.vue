@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isLoading" class="loading">Loading</div>
+    <div v-if="isLoading" class="loading"></div>
     <div id="grid">
         <div id="header">
             <h1>Dashboard</h1>
@@ -11,16 +11,6 @@
             <div id="addCollectionForm">
                 <input id="collectionName" type="text" placeholder="Name" />
                 <button @click="addCollection">Add</button>
-            </div>
-        </div>
-
-        <div v-if="isLoading">
-            <div class="loader-container">
-                <div class="bouncing-dots">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
             </div>
         </div>
         <div v-if="!isLoading" id="collections">
@@ -128,35 +118,15 @@ export default {
   width: 100%;
   height: 20px;
   background: 
-    linear-gradient(90deg, rgba(248,58,96,0.14609593837535018) 33%, rgba(248,58,97,1) 50%, rgba(248,58,102,0.14889705882352944) 66%);
+    linear-gradient(90deg,#f83a660b 33%,#f83a66 50%,#f83a660c 66%)
+    #fef0e6;
+    ;
   background-size:300% 100%;
   animation: l1 1s infinite linear;
 }
 @keyframes l1 {
   0% {background-position: right}
 }
-
-/*
-.loading {
-    font-size: 20px;
-    padding: 10px;
-    position: fixed;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99;
-    color: #891071;
-}
-
-.loading:after {
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: bottom;
-  -webkit-animation: ellipsis steps(4,end) 900ms infinite;      
-  animation: ellipsis steps(4,end) 900ms infinite;
-  content: "\2026";
-  width: 0px;
-}*/
 
 @keyframes ellipsis {
   to {
