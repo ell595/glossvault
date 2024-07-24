@@ -121,6 +121,23 @@ export default {
 </script>
 
 <style scoped>
+.loader {
+    position: absolute;
+    top: 70px;
+    z-index: 99;
+  width: 100%;
+  height: 20px;
+  background: 
+    linear-gradient(90deg,#0001 33%,#0005 50%,#0001 66%)
+    #f2f2f2;
+  background-size:300% 100%;
+  animation: l1 1s infinite linear;
+}
+@keyframes l1 {
+  0% {background-position: right}
+}
+
+/*
 .loading {
     font-size: 20px;
     padding: 10px;
@@ -138,9 +155,9 @@ export default {
   vertical-align: bottom;
   -webkit-animation: ellipsis steps(4,end) 900ms infinite;      
   animation: ellipsis steps(4,end) 900ms infinite;
-  content: "\2026"; /* ascii code for the ellipsis character */
+  content: "\2026";
   width: 0px;
-}
+}*/
 
 @keyframes ellipsis {
   to {

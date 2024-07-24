@@ -49,7 +49,10 @@ export default {
                 // Send POST request to API attaching body
                 const response = await fetch(import.meta.env.VITE_API_URL + "/api/getcollection", {
                 method: "POST",
-                    headers: {"Content-Type": "application/json"},
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
                     body: JSON.stringify(body)
                 });
 
