@@ -20,6 +20,7 @@ export default {
                 const email = this.inputtedEmail;
                 const password = this.inputtedPassword;
                 const body = {email, password};
+                console.log(body);
 
                 // Send POST request to API attaching body
                 const response = await fetch(import.meta.env.VITE_API_URL + "/api/login", {
@@ -30,9 +31,11 @@ export default {
                     },
                     body: JSON.stringify(body)
                 });
+                console.log(response);
 
                 // Await response
                 const parseRes = await response.json();
+                console.log(parseRes);
 
                 if (response.ok) {
                     // Store API token in localStorage & redirect to Dashboard

@@ -125,11 +125,13 @@ nav a {
     color: #550250;
 }
 
-/*.background {
-    height: 100dvh;
-    background-image: url('../../0_lip gloss bottles and sticks scattered on a white _esrgan-v1-x2plus.png');
-    background-size: 100%;
-}*/
+#error {
+    margin-top: 15px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media only screen and (max-width: 600px) {
     /*.background {
