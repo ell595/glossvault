@@ -18,7 +18,14 @@
     "isEntry": true,
     "imports": [
       "_styles-BCHjIOLW.js"
+    ],
+    "assets": [
+      "assets/favicon-CjCxB73U.ico"
     ]
+  },
+  "src/assets/favicon.ico": {
+    "file": "assets/favicon-CjCxB73U.ico",
+    "src": "src/assets/favicon.ico"
   },
   "src/main.js": {
     "file": "assets/main-C91Vs3j1.js",
